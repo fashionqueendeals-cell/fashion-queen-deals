@@ -1,1 +1,132 @@
-index.html
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Queen Deals</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#29212a;background:#fff}
+header{background:linear-gradient(120deg,#761744,#d65b91);color:white;text-align:center;padding:28px 12px}
+header h1{margin:0;font-size:27px}
+header p{margin:8px 0 0}
+nav{text-align:center;padding:14px;background:#fff;box-shadow:0 2px 8px #ddd}
+nav a{color:#8b2457;text-decoration:none;margin:0 12px;font-weight:bold}
+.hero{margin:20px 14px;padding:30px 15px;text-align:center;background:#fff0f6;border-radius:16px}
+.hero h2{color:#8b2457;margin:0 0 10px}
+.hero p{margin:0;color:#66545e}
+main{max-width:1000px;margin:auto;padding:12px}
+h2.title{color:#8b2457}
+.filters{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.filters button{border:1px solid #8b2457;background:white;color:#8b2457;padding:10px 17px;border-radius:22px;font-weight:bold}
+.filters button.active{background:#8b2457;color:white}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.card{border:1px solid #eee;border-radius:13px;overflow:hidden}
+.photo{height:155px;background:#f9eaf1;display:flex;align-items:center;justify-content:center;text-align:center;color:#8b2457;padding:10px}
+.photo img{width:100%;height:100%;object-fit:cover}
+.details{padding:12px}
+.details h3{font-size:15px;margin:0 0 8px}
+.price{color:#8b2457;font-weight:bold;margin:0 0 12px}
+.buy{display:block;background:#8b2457;color:white;text-align:center;text-decoration:none;padding:10px;border-radius:8px;font-weight:bold;font-size:14px}
+.about{background:#fff0f6;padding:18px;border-radius:12px;margin:25px 0}
+footer{background:#291b25;color:white;text-align:center;padding:22px;font-size:13px}
+@media(min-width:650px){.products{grid-template-columns:repeat(4,1fr)}.photo{height:210px}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>👑 Fashion Queen Deals</h1>
+<p>Aapki Pasand, Aapke Budget Mein ❤️</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Fashion Deals</a>
+<a href="#about">About</a>
+</nav>
+
+<section class="hero" id="home">
+<h2>Welcome to Fashion Queen Deals</h2>
+<p>Latest Kurtis, Suits aur Fashion Collection ek hi jagah!</p>
+</section>
+
+<main id="products">
+<h2 class="title">✨ Latest Fashion Collection</h2>
+
+<div class="filters">
+<button class="active" onclick="showProducts('all',this)">All</button>
+<button onclick="showProducts('Amazon',this)">Amazon</button>
+<button onclick="showProducts('Meesho',this)">Meesho</button>
+</div>
+
+<div class="products">
+
+<div class="card" data-store="Amazon">
+<div class="photo">Kurti Photo</div>
+<div class="details">
+<h3>Beautiful Daily Wear Kurti</h3>
+<p class="price">Price: Check on Amazon</p>
+<a class="buy" href="#" onclick="demo(event)">Amazon par dekhein</a>
+</div>
+</div>
+
+<div class="card" data-store="Meesho">
+<div class="photo">Kurti Photo</div>
+<div class="details">
+<h3>Stylish Printed Kurti</h3>
+<p class="price">Price: Check on Meesho</p>
+<a class="buy" href="#" onclick="demo(event)">Meesho par dekhein</a>
+</div>
+</div>
+
+<div class="card" data-store="Amazon">
+<div class="photo">Suit Photo</div>
+<div class="details">
+<h3>Women's Suit Set</h3>
+<p class="price">Price: Check on Amazon</p>
+<a class="buy" href="#" onclick="demo(event)">Amazon par dekhein</a>
+</div>
+</div>
+
+<div class="card" data-store="Meesho">
+<div class="photo">Dress Photo</div>
+<div class="details">
+<h3>Trendy Women's Dress</h3>
+<p class="price">Price: Check on Meesho</p>
+<a class="buy" href="#" onclick="demo(event)">Meesho par dekhein</a>
+</div>
+</div>
+
+</div>
+
+<section class="about" id="about">
+<h2>About Us ❤️</h2>
+<p>Fashion Queen Deals par aapko Amazon aur Meesho ke latest fashion products milenge. Apni pasand ka product chunein aur Buy Now par click karein.</p>
+</section>
+
+<p style="font-size:12px;color:#777">Note: Product ki final price aur availability shopping platform par check karein. Affiliate link se commission mil sakta hai, agar valid affiliate link use kiya gaya ho.</p>
+</main>
+
+<footer>
+© 2026 Fashion Queen Deals | Happy Shopping ❤️
+</footer>
+
+<script>
+function showProducts(store,button){
+document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+document.querySelectorAll('.card').forEach(card=>{
+card.style.display=(store==='all'||card.dataset.store===store)?'':'none';
+});
+}
+function demo(event){
+event.preventDefault();
+alert('Yahan apna asli Amazon ya Meesho affiliate link lagana hai.');
+}
+</script>
+
+</body>
+</html>
+
